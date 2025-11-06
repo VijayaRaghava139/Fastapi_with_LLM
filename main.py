@@ -97,6 +97,8 @@ class DetectedFoodItem(BaseModel):
         gt=0
     )
     confidence: float = Field(..., description="Detection confidence (0.0 to 1.0)", ge=0.0, le=1.0)
+    image_width: int = Field(..., description="Image width (same as request)")
+    image_height: int = Field(..., description="Image height (same as request)")
     
     class Config:
         schema_extra = {
@@ -147,8 +149,6 @@ class FoodDetectionResponse(BaseModel):
         default_factory=list, 
         description="List of detected food items"
     )
-    image_width: int = Field(..., description="Image width (same as request)")
-    image_height: int = Field(..., description="Image height (same as request)")
     message: Optional[str] = Field(None, description="Error or info message")
     processing_time_ms: Optional[int] = Field(None, description="Processing time in milliseconds")
     
