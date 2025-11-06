@@ -354,8 +354,8 @@ IMPORTANT RULES:
                     item.estimated_density_g_cm3 = db_density
             
             # Set metadata
-            result.image_width = image_width
-            result.image_height = image_height
+            result.items.image_width = image_width
+            result.items.image_height = image_height
             result.success = len(result.items) > 0
             
             # Calculate processing time
