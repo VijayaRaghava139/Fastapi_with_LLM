@@ -352,10 +352,12 @@ IMPORTANT RULES:
                 db_density = FoodDatabase.get_density(item.name)
                 if db_density != 0.75:  # If not default
                     item.estimated_density_g_cm3 = db_density
+
+                # Set image dimensions for each item (FIX APPLIED HERE)
+                item.image_width = image_width
+                item.image_height = image_height
             
             # Set metadata
-            result.items.image_width = image_width
-            result.items.image_height = image_height
             result.success = len(result.items) > 0
             
             # Calculate processing time
