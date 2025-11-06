@@ -108,7 +108,9 @@ class DetectedFoodItem(BaseModel):
                 "bbox": {"x": 100, "y": 150, "width": 200, "height": 200},
                 "calories_per_100g": 52.0,
                 "estimated_density_g_cm3": 0.64,
-                "confidence": 0.92
+                "confidence": 0.92,
+                "image_width": 1920,
+                "image_height": 1080
             }
         }
 
@@ -163,11 +165,11 @@ class FoodDetectionResponse(BaseModel):
                         "bbox": {"x": 100, "y": 150, "width": 200, "height": 200},
                         "calories_per_100g": 52.0,
                         "estimated_density_g_cm3": 0.64,
-                        "confidence": 0.92
+                        "confidence": 0.92,
+                        "image_width": 1920,
+                        "image_height": 1080
                     }
                 ],
-                "image_width": 1920,
-                "image_height": 1080,
                 "message": None,
                 "processing_time_ms": 8534
             }
